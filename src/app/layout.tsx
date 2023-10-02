@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.boricestamoscontigo.cl'),
   title: 'Boric estamos contigo',
   description: 'Sitio web creado por adherentes del gobierno de Gabriel Boric Font',
   openGraph: {
