@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     siteName: 'Boric estamos contigo',
     title: 'Boric estamos contigo',
   },
+  verification: {
+    google: 'l8qnn6nFNEnrLlu5etFT2h2tR6LJ3-OEaUpHxACK3Bs',
+  },
 }
 
 export default function RootLayout({
