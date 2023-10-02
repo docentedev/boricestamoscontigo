@@ -84,6 +84,9 @@ export default function Home() {
       </section>
       <section>
         <h2 className={`text-center ${oswald.className} mt-4`}>Nosotros apoyamos al presidente</h2>
+        <h3 className={styles.followLink}>Si tú también apoyas al presidente,<Link target="_blank" href="https://www.tiktok.com/@claudiodeviaje">
+          contáctame aquí
+        </Link>  sé parte de un grupo de ciudadanos que queremos hacer grande a Chile 🇨🇱</h3>
         <div className={`row ${openSans.className}`}>
           <div className="col">
             <div className={styles.supportingUserContainer}>
