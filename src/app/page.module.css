@@ -18,7 +18,7 @@
     justify-content: center;
 }
 
-.main header>div>div:first-child {
+.main header>div>div:first-child>h1 {
     max-width: 16rem;
 }
 
@@ -37,7 +37,6 @@
     font-weight: bolder;
     font-size: 5rem;
     line-height: 68px;
-    font-family: var(--font-oswald);
 }
 
 .main header h2 {
@@ -69,6 +68,56 @@
     .main header h1 {
         font-size: 3rem;
     }
+}
+
+.supportingUserContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 90%;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem auto;
+}
+
+.supportingUserContainer a {
+    text-decoration: none;
+    color: #fd1555;
+    transition: all ease 0.25s;
+}
+
+.supportingUser {
+    transition: all ease 0.25s;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.supportingUser img {
+    transition: all ease 0.25s;
+    border-radius: 50%;
+}
+
+.supportingUser h3 {
+    font-size: 1rem;
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.supportingUserContainer a:hover {
+    color: #fd1555;
+    transition: all ease 0.25s;
+}
+
+.supportingUserContainer a:hover .supportingUser {
+    background-color: #fd1555;
+    color: #f0f0f0;
+    transition: all ease 0.25s;
+}
+
+.supportingUserContainer a:hover .supportingUser img {
+    transition: all ease 0.25s;
+    border-radius: 40%;
 }
 
 @media screen and (max-width: 830px) {
