@@ -105,7 +105,6 @@ export default function Home() {
       <div className={`row ${openSans.className}`}>
         <Footer />
       </div>
-      {'<!-- Google tag (gtag.js) -->'}
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-5LQPVHP6RD" />
       <Script id="google-analytics">
         {`
