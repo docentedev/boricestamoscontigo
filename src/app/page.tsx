@@ -15,6 +15,8 @@ import tiktok_AtZurda38porciento from './users/tiktok_@zurda38porciento.jpeg';
 import tiktok_AtManque1978 from './users/tiktok_@manque1978.jpeg';
 import tiktok_AtPatolex2020 from './users/tiktok_@patolex2020.jpeg';
 import tiktok_AtNaranjaymiel__ from './users/tiktok_@naranjaymiel__.jpeg';
+import tiktok_AtCarlosdsassa from './users/tiktok_@carlosdsassa.jpeg';
+import tiktok_AtQuintralacolorada from './users/tiktok_@quintralacolorada.jpeg';
 
 import Footer from './Footer';
 import Avances from './avances';
@@ -67,6 +69,14 @@ const usersWhoSupport: SupportingUser[] = [{
   username: '@naranjaymiel__',
   image: tiktok_AtNaranjaymiel__,
   link: 'https://www.tiktok.com/@naranjaymiel__/video/7284718741345029382?lang=es',
+}, {
+  username: '@carlosdsassa',
+  image: tiktok_AtCarlosdsassa,
+  link: 'https://www.tiktok.com/@carlosdsassa/video/7284668717382913285?lang=es',
+}, {
+  username: '@quintralacolorada',
+  image: tiktok_AtQuintralacolorada,
+  link: 'https://www.tiktok.com/@quintralacolorada/video/7284737570414595334?lang=es',
 }];
 
 const Users = () => {
