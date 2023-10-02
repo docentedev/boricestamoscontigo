@@ -14,6 +14,7 @@ import tiktok_AtMarianiits_ from './users/tiktok_@marianiits_.jpeg';
 import tiktok_AtZurda38porciento from './users/tiktok_@zurda38porciento.jpeg';
 import tiktok_AtManque1978 from './users/tiktok_@manque1978.jpeg';
 import tiktok_AtPatolex2020 from './users/tiktok_@patolex2020.jpeg';
+import tiktok_AtNaranjaymiel__ from './users/tiktok_@naranjaymiel__.jpeg';
 
 import Footer from './Footer';
 
@@ -61,6 +62,10 @@ const usersWhoSupport: SupportingUser[] = [{
   username: '@patolex2020',
   image: tiktok_AtPatolex2020,
   link: 'https://www.tiktok.com/@patolex2020/video/7284750291306597637?lang=es',
+}, {
+  username: '@naranjaymiel__',
+  image: tiktok_AtNaranjaymiel__,
+  link: 'https://www.tiktok.com/@naranjaymiel__/video/7284718741345029382?lang=es',
 }];
 
 export default function Home() {

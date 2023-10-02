@@ -22,10 +22,10 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col">
+                    <div className="col-12 col-md-8 mb-2">
                         No tenemos ninguna relación con el gobierno, todo el dinero para lograr esto, sale de nuestros bolsillos y no aceptamos aportes monetarios. Si nos quieres ayudar que sea con tu trabajo, con tu mente, con tu pasión, con tus palabras.
                     </div>
-                    <div className="col text-end">
+                    <div className="col-12 col-md-4 text-end">
                         <Link className={oswald.className} target="_blank" href="https://www.tiktok.com/@claudiodeviaje">
                             Participa aquí
                         </Link>
