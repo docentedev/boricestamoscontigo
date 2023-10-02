@@ -1,5 +1,4 @@
 import React from 'react';
-import { openSans } from './page';
 
 function Card() {
     return (
@@ -12,7 +11,7 @@ function Card() {
                     allowFullScreen />
             </div>
 
-            <div className={`card-body ${openSans.className}`}>
+            <div className={`card-body`}>
                 <h5 className="card-title">Discurso del Presidente Boric durante la histórica convocatoria ciudadana del 30/09</h5>
                 <p className="card-text">Discurso del Presidente Boric durante la histórica convocatoria ciudadana del 30/09, en la Plaza de la Constitución. Agradecimientos a todos los que asistieron a los distintos puntos de encuentro a nivel nacional, vamos ganando experiencia, esto recién comienza #BoricEstamosContigo #Boricnoestasolo</p>
             </div>
