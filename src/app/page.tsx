@@ -17,6 +17,7 @@ import tiktok_AtPatolex2020 from './users/tiktok_@patolex2020.jpeg';
 import tiktok_AtNaranjaymiel__ from './users/tiktok_@naranjaymiel__.jpeg';
 
 import Footer from './Footer';
+import Avances from './avances';
 
 const openSans = Open_Sans({
   weight: '400',
@@ -68,9 +69,34 @@ const usersWhoSupport: SupportingUser[] = [{
   link: 'https://www.tiktok.com/@naranjaymiel__/video/7284718741345029382?lang=es',
 }];
 
+const Users = () => {
+  return (
+    <section className='container'>
+      <h2 className={`text-center ${oswald.className} mt-4`}>Nosotros apoyamos al presidente</h2>
+      <h3 className={styles.followLink}>Si tú también apoyas al presidente,{' '}<Link target="_blank" href="https://www.tiktok.com/@claudiodeviaje">
+        contáctame aquí
+      </Link>  y sé parte de un grupo de ciudadanos que queremos hacer grande a Chile 🇨🇱</h3>
+      <div className={`row ${openSans.className}`}>
+        <div className="col">
+          <div className={styles.supportingUserContainer}>
+            {usersWhoSupport.map((e: SupportingUser, i: number) => (
+              <Link href={e.link} target='_blank' key={i}>
+                <article className={styles.supportingUser}>
+                  <Image src={e.image} width={80} height={80} alt={e.username} />
+                  <h3>{e.username}</h3>
+                </article>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
-    <main className={`${styles.main}`}>
+    <main className={`${styles.main} ${openSans.className}`}>
       <header>
         <div>
           <div>
@@ -92,27 +118,9 @@ export default function Home() {
       <section className={`${openSans.className}`}>
         <Card />
       </section>
-      <section className='container'>
-        <h2 className={`text-center ${oswald.className} mt-4`}>Nosotros apoyamos al presidente</h2>
-        <h3 className={styles.followLink}>Si tú también apoyas al presidente,{' '}<Link target="_blank" href="https://www.tiktok.com/@claudiodeviaje">
-          contáctame aquí
-        </Link>  y sé parte de un grupo de ciudadanos que queremos hacer grande a Chile 🇨🇱</h3>
-        <div className={`row ${openSans.className}`}>
-          <div className="col">
-            <div className={styles.supportingUserContainer}>
-              {usersWhoSupport.map((e: SupportingUser, i: number) => (
-                <Link href={e.link} target='_blank' key={i}>
-                  <article className={styles.supportingUser}>
-                    <Image src={e.image} width={80} height={80} alt={e.username} />
-                    <h3>{e.username}</h3>
-                  </article>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
       <div className={openSans.className}>
+        <Avances />
+        <Users />
         <Footer />
       </div>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-5LQPVHP6RD" />
