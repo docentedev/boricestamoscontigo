@@ -1,14 +1,35 @@
+import Link from 'next/link';
 import styles from './Footer.module.css';
+import { Open_Sans, Oswald } from 'next/font/google'
+
+const oswald = Oswald({
+    weight: '400',
+    subsets: ['latin'],
+})
+
+const openSans = Open_Sans({
+    weight: '400',
+    subsets: ['latin'],
+  })
 
 const Footer = () => {
     return (
-        <footer className={`d-flex flex-wrap justify-content-between align-items-center py-3 border-top ${styles.footer}`}>
-            <div className="container">
-                <div className="col-md-4 d-flex align-items-center">
-                    <a href="/" className="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                        <svg className="bi" width={30} height={24}><use xlinkHref="#bootstrap" /></svg>
-                    </a>
-                    <span className="mb-3 mb-md-0 text-muted">Boric estamos contigo (CC) {new Date().getFullYear()}</span>
+        <footer className={styles.footer}>
+            <div className={openSans.className}>
+                <div className="row">
+                    <div className="col-md-4 d-flex align-items-center">
+                        <h4 className="mb-3 mb-md-0Z">Boric estamos contigo (CC) {new Date().getFullYear()}</h4>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col">
+                        No tenemos ninguna relación con el gobierno, todo el dinero para lograr esto, sale de nuestros bolsillos y no aceptamos aportes monetarios. Si nos quieres ayudar que sea con tu trabajo, con tu mente, con tu pasión, con tus palabras.
+                    </div>
+                    <div className="col text-end">
+                        <Link className={oswald.className} target="_blank" href="https://www.tiktok.com/@claudiodeviaje">
+                            Participa aquí
+                        </Link>
+                    </div>
                 </div>
                 {/*<ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
                     <li className="ms-3"><a className="text-muted" href="#"><svg className="bi" width={24} height={24}><use xlinkHref="#twitter" /></svg></a></li>

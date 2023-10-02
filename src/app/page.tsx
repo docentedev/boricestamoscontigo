@@ -13,6 +13,7 @@ import tiktok_AtLoretoAPC from './users/tiktok_@loreto.a.p.c.jpeg';
 import tiktok_AtMarianiits_ from './users/tiktok_@marianiits_.jpeg';
 import tiktok_AtZurda38porciento from './users/tiktok_@zurda38porciento.jpeg';
 import tiktok_AtManque1978 from './users/tiktok_@manque1978.jpeg';
+import tiktok_AtPatolex2020 from './users/tiktok_@patolex2020.jpeg';
 
 import Footer from './Footer';
 
@@ -56,6 +57,10 @@ const usersWhoSupport: SupportingUser[] = [{
   username: '@manque1978',
   image: tiktok_AtManque1978,
   link: 'https://www.tiktok.com/@manque1978/video/7283198729128054021?lang=es',
+}, {
+  username: '@patolex2020',
+  image: tiktok_AtPatolex2020,
+  link: 'https://www.tiktok.com/@patolex2020/video/7284750291306597637?lang=es',
 }];
 
 export default function Home() {
@@ -86,7 +91,7 @@ export default function Home() {
         <h2 className={`text-center ${oswald.className} mt-4`}>Nosotros apoyamos al presidente</h2>
         <h3 className={styles.followLink}>Si tú también apoyas al presidente,<Link target="_blank" href="https://www.tiktok.com/@claudiodeviaje">
           contáctame aquí
-        </Link>  sé parte de un grupo de ciudadanos que queremos hacer grande a Chile 🇨🇱</h3>
+        </Link>  y sé parte de un grupo de ciudadanos que queremos hacer grande a Chile 🇨🇱</h3>
         <div className={`row ${openSans.className}`}>
           <div className="col">
             <div className={styles.supportingUserContainer}>

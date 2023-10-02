@@ -1,3 +1,22 @@
 .footer {
     background: #fd1555;
+    color: #f0f0f0;
+    padding: 4rem;
+}
+
+.footer a {
+    background: rgb(220, 15, 70);
+    padding: 1rem;
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all ease 0.25s;
+}
+
+.footer a:hover {
+    background: #a3032f;
+    transition: all ease 0.25s;
 }
