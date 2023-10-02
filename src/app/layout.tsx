@@ -8,6 +8,14 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Boric estamos contigo',
   description: 'Sitio web creado por adherentes del gobierno de Gabriel Boric Font',
+  openGraph: {
+    url: 'https://www.boricestamoscontigo.cl/',
+    images: ['https://www.boricestamoscontigo.cl/og-image.png'],
+    type: 'website',
+    description: 'Sitio web creado por adherentes del gobierno de Gabriel Boric Font',
+    siteName: 'Boric estamos contigo',
+    title: 'Boric estamos contigo',
+  },
 }
 
 export default function RootLayout({
