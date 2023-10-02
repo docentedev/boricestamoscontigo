@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from 'next/image'
-import { Roboto, Oswald } from 'next/font/google'
+import { Open_Sans, Oswald } from 'next/font/google'
 import Link from 'next/link';
 
 import styles from './page.module.css'
@@ -13,10 +13,9 @@ import tiktok_AtMarianiits_ from './users/tiktok_@marianiits_.jpeg';
 import tiktok_AtZurda38porciento from './users/tiktok_@zurda38porciento.jpeg';
 import tiktok_AtManque1978 from './users/tiktok_@manque1978.jpeg';
 
-
 import Footer from './Footer';
 
-export const roboto = Roboto({
+export const openSans = Open_Sans({
   weight: '400',
   subsets: ['latin'],
 })
@@ -84,7 +83,7 @@ export default function Home() {
       </section>
       <section>
         <h2 className={`text-center ${oswald.className} mt-4`}>Nosotros apoyamos al presidente</h2>
-        <div className="row">
+        <div className={`row ${openSans.className}`}>
           <div className="col">
             <div className={styles.supportingUserContainer}>
               {usersWhoSupport.map((e: SupportingUser, i: number) => (
@@ -99,7 +98,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Footer/>
+      <div className={`row ${openSans.className}`}>
+        <Footer />
+      </div>
     </main>
   )
 
