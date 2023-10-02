@@ -87,9 +87,9 @@ export default function Home() {
       <section className={`${openSans.className}`}>
         <Card />
       </section>
-      <section>
+      <section className='container'>
         <h2 className={`text-center ${oswald.className} mt-4`}>Nosotros apoyamos al presidente</h2>
-        <h3 className={styles.followLink}>Si tú también apoyas al presidente,<Link target="_blank" href="https://www.tiktok.com/@claudiodeviaje">
+        <h3 className={styles.followLink}>Si tú también apoyas al presidente,{' '}<Link target="_blank" href="https://www.tiktok.com/@claudiodeviaje">
           contáctame aquí
         </Link>  y sé parte de un grupo de ciudadanos que queremos hacer grande a Chile 🇨🇱</h3>
         <div className={`row ${openSans.className}`}>
@@ -107,7 +107,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className={`row ${openSans.className}`}>
+      <div className={openSans.className}>
         <Footer />
       </div>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-5LQPVHP6RD" />
