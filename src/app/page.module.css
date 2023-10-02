@@ -51,11 +51,11 @@
     margin: 0 auto 2rem auto;
     width: 35rem;
     max-width: 90%;
-}
+} 
 
 .followLink a {
     text-decoration: none;
-    color: #fd1555;
+    color: #cc1b4c;
 }
 
 .followLink a:hover {
@@ -101,7 +101,7 @@
 
 .supportingUserContainer a {
     text-decoration: none;
-    color: #fd1555;
+    color: #cc1b4c;
     transition: all ease 0.25s;
 }
 

@@ -13,6 +13,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-lite-youtube-embed": "^2.3.52",
     "react-twitter-embed": "^4.0.4"
   },
   "devDependencies": {

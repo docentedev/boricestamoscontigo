@@ -1,11 +1,12 @@
 .footer {
-    background: #fd1555;
-    color: #f0f0f0;
+    border-top: solid 1rem #fd1555;
+    background: hsl(343.45deg, 100%, 97.02%);
+    color: hsl(343.08deg, 87.97%, 26.08%);
     padding: 4rem;
 }
 
 .footer a {
-    background: rgb(220, 15, 70);
+    background: #cc1b4c;
     padding: 1rem;
     color: #f0f0f0;
     text-decoration: none;
