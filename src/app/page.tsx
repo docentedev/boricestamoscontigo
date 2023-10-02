@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from 'next/image'
 import { Open_Sans, Oswald } from 'next/font/google'
 import Link from 'next/link';
+import Script from 'next/script';
 
 import styles from './page.module.css'
 import mainImage from './images/main.png'
@@ -101,6 +102,17 @@ export default function Home() {
       <div className={`row ${openSans.className}`}>
         <Footer />
       </div>
+      {'<!-- Google tag (gtag.js) -->'}
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-5LQPVHP6RD" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+  
+          gtag('config', 'G-5LQPVHP6RD');
+        `}
+      </Script>
     </main>
   )
 
