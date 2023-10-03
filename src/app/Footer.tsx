@@ -26,7 +26,7 @@ const Footer = () => {
                         No tenemos ninguna relación con el gobierno, todo el dinero para lograr esto, sale de nuestros bolsillos y no aceptamos aportes monetarios. Si nos quieres ayudar que sea con tu trabajo, con tu mente, con tu pasión, con tus palabras.
                     </div>
                     <div className="col-12 col-md-4 text-end">
-                        <Link className={oswald.className} target="_blank" href="https://www.tiktok.com/@claudiodeviaje">
+                        <Link className={oswald.className} target="_blank" href="https://forms.gle/MfeksEtsTVciK4ak6">
                             Participa aquí
                         </Link>
                     </div>
