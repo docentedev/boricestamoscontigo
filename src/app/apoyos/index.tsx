@@ -5,6 +5,7 @@ import { Open_Sans, Oswald } from 'next/font/google'
 import Link from 'next/link';
 import styles from './index.module.css'
 import { useEffect, useState } from 'react';
+import { HOST } from '@/utils';
 
 const openSans = Open_Sans({
     weight: '400',
@@ -30,8 +31,6 @@ export type Apoyo = {
         };
     };
 };
-
-const HOST = 'https://170-187-202-173.ip.linodeusercontent.com';
 
 const Apoyos = () => {
     const [apoyos, setApoyos] = useState([]);
