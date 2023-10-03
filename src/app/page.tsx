@@ -1,25 +1,14 @@
 import Image, { StaticImageData } from 'next/image'
 import { Open_Sans, Oswald } from 'next/font/google'
-import Link from 'next/link';
 import Script from 'next/script';
 
 import styles from './page.module.css'
 import mainImage from './images/main.png'
 import Card from './Card';
 
-import tiktok_AtJusticieroAnonimo from './users/tiktok_@justiciero.anonimo.jpeg';
-import tiktok_AtClaudiodeviaje from './users/tiktok_@claudiodeviaje.jpeg';
-import tiktok_AtLoretoAPC from './users/tiktok_@loreto.a.p.c.jpeg';
-import tiktok_AtMarianiits_ from './users/tiktok_@marianiits_.jpeg';
-import tiktok_AtZurda38porciento from './users/tiktok_@zurda38porciento.jpeg';
-import tiktok_AtManque1978 from './users/tiktok_@manque1978.jpeg';
-import tiktok_AtPatolex2020 from './users/tiktok_@patolex2020.jpeg';
-import tiktok_AtNaranjaymiel__ from './users/tiktok_@naranjaymiel__.jpeg';
-import tiktok_AtCarlosdsassa from './users/tiktok_@carlosdsassa.jpeg';
-import tiktok_AtQuintralacolorada from './users/tiktok_@quintralacolorada.jpeg';
-
 import Footer from './Footer';
 import Avances from './avances';
+import Apoyos from './apoyos';
 
 const openSans = Open_Sans({
   weight: '400',
@@ -30,79 +19,6 @@ const oswald = Oswald({
   weight: '400',
   subsets: ['latin'],
 })
-
-type SupportingUser = {
-  username: string,
-  image: StaticImageData,
-  link: string,
-}
-
-const usersWhoSupport: SupportingUser[] = [{
-  username: '@justiciero.anonimo',
-  image: tiktok_AtJusticieroAnonimo,
-  link: 'https://www.tiktok.com/@justiciero.anonimo/video/7284627625425849606',
-}, {
-  username: '@claudiodeviaje',
-  image: tiktok_AtClaudiodeviaje,
-  link: 'https://www.tiktok.com/@claudiodeviaje/video/7284630001217998086',
-}, {
-  username: '@loreto.a.p.c',
-  image: tiktok_AtLoretoAPC,
-  link: 'https://www.tiktok.com/@loreto.a.p.c/video/7285087429239786758?lang=es',
-}, {
-  username: '@marianiits_',
-  image: tiktok_AtMarianiits_,
-  link: 'https://www.tiktok.com/@marianiits_/video/7284669192681311494?lang=es',
-}, {
-  username: '@zurda38porciento',
-  image: tiktok_AtZurda38porciento,
-  link: 'https://www.tiktok.com/@zurda38porciento/video/7283913328940862725?lang=es',
-}, {
-  username: '@manque1978',
-  image: tiktok_AtManque1978,
-  link: 'https://www.tiktok.com/@manque1978/video/7283198729128054021?lang=es',
-}, {
-  username: '@patolex2020',
-  image: tiktok_AtPatolex2020,
-  link: 'https://www.tiktok.com/@patolex2020/video/7284750291306597637?lang=es',
-}, {
-  username: '@naranjaymiel__',
-  image: tiktok_AtNaranjaymiel__,
-  link: 'https://www.tiktok.com/@naranjaymiel__/video/7284718741345029382?lang=es',
-}, {
-  username: '@carlosdsassa',
-  image: tiktok_AtCarlosdsassa,
-  link: 'https://www.tiktok.com/@carlosdsassa/video/7284668717382913285?lang=es',
-}, {
-  username: '@quintralacolorada',
-  image: tiktok_AtQuintralacolorada,
-  link: 'https://www.tiktok.com/@quintralacolorada/video/7284737570414595334?lang=es',
-}];
-
-const Users = () => {
-  return (
-    <section className='container'>
-      <h2 className={`text-center ${oswald.className} mt-4`}>Nosotros apoyamos al presidente</h2>
-      <h3 className={styles.followLink}>Si tú también apoyas al presidente,{' '}<Link target="_blank" href="https://www.tiktok.com/@claudiodeviaje">
-        contáctame aquí
-      </Link>  y sé parte de un grupo de ciudadanos que queremos hacer grande a Chile 🇨🇱</h3>
-      <div className={`row ${openSans.className}`}>
-        <div className="col">
-          <div className={styles.supportingUserContainer}>
-            {usersWhoSupport.map((e: SupportingUser, i: number) => (
-              <Link href={e.link} target='_blank' key={i}>
-                <article className={styles.supportingUser}>
-                  <Image src={e.image} width={80} height={80} alt={e.username} />
-                  <h3>{e.username}</h3>
-                </article>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export default function Home() {
   return (
@@ -130,7 +46,7 @@ export default function Home() {
       </section>
       <div className={openSans.className}>
         <Avances />
-        <Users />
+        <Apoyos />
         <Footer />
       </div>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-5LQPVHP6RD" />
