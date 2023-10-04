@@ -149,7 +149,7 @@ const Avances = () => {
             <div className='mt-2'>
                 {apoyos.map((item: Elemento, index: number) => (
                     <div key={index}>
-                        <Link href={item.attributes.link} target="_blank">
+                        {item.attributes.link && (<Link href={item.attributes.link} target="_blank">
                             <article>
                                 <Image
                                     src={HOST + item.attributes.imagen.data.attributes.url}
@@ -165,7 +165,7 @@ const Avances = () => {
                                     <span>Saber más</span>
                                 </div>
                             </article>
-                        </Link>
+                        </Link>)}
                     </div>
                 ))}
             </div>
