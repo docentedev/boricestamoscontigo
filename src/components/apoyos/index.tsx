@@ -5,7 +5,7 @@ import { Open_Sans, Oswald } from 'next/font/google'
 import Link from 'next/link';
 import styles from './index.module.css'
 import { useEffect, useState } from 'react';
-import { HOST } from '@/utils';
+import { HOST, TOKEN } from '@/utils';
 
 const openSans = Open_Sans({
     weight: '400',
@@ -38,12 +38,10 @@ const Apoyos = () => {
     useEffect(() => {
         const cargarDatosDeLaAPI = async () => {
             const apiUrl = HOST + '/api/apoyos?populate=*';
-            const token = '47a9933aab61f0b7aad3f78f340ce7c5ecf4bc2f19cecef926ac71504a0f9559fff2902811d3f70a4fac3e4494d2164bc5267391a6f5a3d1af6c4a49333f123e44f98dfb6fc7258ceb00d2d952bafc366301ea95b63bf0810717394523c015a72a57b5a7a6d75983600d80c95bda7b491aea0c41a2ec5bb74d9099c640deee44';
-
             const options = {
                 method: 'GET',
                 headers: {
-                    Authorization: `Bearer ${token}`,
+                    Authorization: `Bearer ${TOKEN}`,
                 },
             };
 

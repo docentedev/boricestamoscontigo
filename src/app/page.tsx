@@ -1,14 +1,14 @@
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import { Open_Sans, Oswald } from 'next/font/google'
 import Script from 'next/script';
 
 import styles from './page.module.css'
-import mainImage from './images/main.png'
-import Card from './Card';
+import mainImage from '../components/images/main.png'
+import Card from '../components/card/Card';
 
-import Footer from './Footer';
-import Avances from './avances';
-import Apoyos from './apoyos';
+import Footer from '../components/footer/Footer';
+import Avances from '../components/avances';
+import Apoyos from '../components/apoyos';
 
 const openSans = Open_Sans({
   weight: '400',
