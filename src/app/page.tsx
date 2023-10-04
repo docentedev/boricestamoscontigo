@@ -11,6 +11,8 @@ import Avances from '../components/avances';
 import Apoyos from '../components/apoyos';
 import { HOST, TOKEN } from '@/utils';
 
+export const dynamic = 'force-dynamic'
+
 const openSans = Open_Sans({
   weight: '400',
   subsets: ['latin'],
@@ -22,7 +24,7 @@ const oswald = Oswald({
 })
 
 const apoyosApi = async () => {
-  const apiUrl = HOST + '/api/apoyos?populate=*';
+  const apiUrl = HOST + `/api/apoyos?populate=*`;
   const options = {
     method: 'GET',
     headers: {
@@ -57,7 +59,7 @@ const avancesApi = async () => {
   }
 };
 
-export default async function Home() {
+export default async function Page() {
   const apoyos = await apoyosApi();
   const avances = await avancesApi();
   return (

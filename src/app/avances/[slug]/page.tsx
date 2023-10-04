@@ -7,6 +7,8 @@ import Footer from '@/components/footer/Footer';
 import { Avance, initial } from './types';
 import Menu from '@/components/menu/Menu';
 
+export const revalidate = 3600/4
+
 import styles from './page.module.css';
 
 const avanceApi = async (slug: string) => {
