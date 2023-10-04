@@ -1,11 +1,8 @@
-'use client'
-
 import Image from 'next/image'
 import { Open_Sans, Oswald } from 'next/font/google'
 import Link from 'next/link';
 import styles from './index.module.css'
-import { useEffect, useState } from 'react';
-import { HOST, TOKEN } from '@/utils';
+import { HOST } from '@/utils';
 
 const openSans = Open_Sans({
     weight: '400',
@@ -32,31 +29,7 @@ export type Apoyo = {
     };
 };
 
-const Apoyos = () => {
-    const [apoyos, setApoyos] = useState([]);
-
-    useEffect(() => {
-        const cargarDatosDeLaAPI = async () => {
-            const apiUrl = HOST + '/api/apoyos?populate=*';
-            const options = {
-                method: 'GET',
-                headers: {
-                    Authorization: `Bearer ${TOKEN}`,
-                },
-            };
-
-            try {
-                const response = await fetch(apiUrl, options);
-                const data = await response.json();
-                setApoyos(data.data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        cargarDatosDeLaAPI();
-    }, []);
-
+const Apoyos = ({ data: apoyos }: { data: Apoyo[] }) => {
     return (
         <section className="container">
             <h2 className={`text-center ${oswald.className} mt-4`}>Nosotros apoyamos al presidente</h2>
@@ -73,7 +46,12 @@ const Apoyos = () => {
                         {apoyos.map((e: Apoyo) => (
                             <a href={e.attributes.link} target="_blank" key={e.id} rel="noopener noreferrer">
                                 <article className={styles.supportingUser}>
-                                    <Image src={HOST + e.attributes.imagen.data.attributes.url} width={100} height={100} alt={e.attributes.nombreDeUsuario} />
+                                    <Image
+                                        src={HOST + e.attributes.imagen.data.attributes.url}
+                                        width={100}
+                                        height={100}
+                                        alt={e.attributes.nombreDeUsuario}
+                                    />
                                     <h3>{e.attributes.nombreDeUsuario}</h3>
                                 </article>
                             </a>

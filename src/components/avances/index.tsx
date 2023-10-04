@@ -1,19 +1,11 @@
-'use client'
-
 import Image from 'next/image';
 import styles from './index.module.css';
 import Link from 'next/link';
 
-import { Open_Sans, Oswald } from 'next/font/google'
-import { useEffect, useState } from 'react';
-import { HOST, TOKEN } from '../../utils';
+import { Oswald } from 'next/font/google'
+import { HOST } from '../../utils';
 
 const oswald = Oswald({
-    weight: '400',
-    subsets: ['latin'],
-})
-
-const openSans = Open_Sans({
     weight: '400',
     subsets: ['latin'],
 })
@@ -95,6 +87,8 @@ type Atributos = {
     updatedAt: string;
     publishedAt: string;
     imagen: Imagen;
+    slug: string;
+    articulo: boolean | null;
 };
 
 type Elemento = {
@@ -102,72 +96,36 @@ type Elemento = {
     attributes: Atributos;
 };
 
-type ApiResponse = {
-    data: Elemento[];
-    meta: {
-        pagination: {
-            page: number;
-            pageSize: number;
-            pageCount: number;
-            total: number;
-        };
-    };
-};
-
-
-const Avances = () => {
-
-    const [apoyos, setApoyos] = useState<Elemento[]>([]);
-
-    useEffect(() => {
-        const cargarDatosDeLaAPI = async () => {
-            const apiUrl = HOST + '/api/avances?populate=*';
-            const options = {
-                method: 'GET',
-                headers: {
-                    Authorization: `Bearer ${TOKEN}`,
-                },
-            };
-
-            try {
-                const response = await fetch(apiUrl, options);
-                const data: ApiResponse = await response.json();
-                setApoyos(data.data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        cargarDatosDeLaAPI();
-    }, []);
-
+const Avances = ({ data: avances }: { data: Elemento[] }) => {
     return (
         <section className={styles.container}>
             <h2 className={`text-center ${oswald.className}`}>Avances</h2>
             <div className='mt-2'>
-                {apoyos.map((item: Elemento, index: number) => (
-                    <div key={index}>
-                        {item.attributes.link && (<Link href={item.attributes.link} target="_blank">
-                            <article>
-                                <Image
-                                    src={HOST + item.attributes.imagen.data.attributes.url}
-                                    alt={item.attributes.titulo}
-                                    width={200} height={160}
-                                    style={{
-                                        objectFit: 'cover',
-                                    }}
-                                />
-                                <div>
-                                    <h3 className={`${oswald.className}`}>{item.attributes.titulo}</h3>
-                                    <p>{item.attributes.descripcion}</p>
-                                    <span>Saber más</span>
-                                </div>
-                            </article>
-                        </Link>)}
-                    </div>
-                ))}
+                {avances.map((item: Elemento, index: number) => {
+                    const linkProps = item.attributes.articulo ? { href: '' } : { href: '', target: '_blank' }
+                    linkProps.href = item.attributes.articulo ? `/avances/${item.attributes.slug}` : item.attributes.link
+                    return (
+                        <div key={index}>
+                            <Link {...linkProps}>
+                                <article>
+                                    <Image
+                                        src={HOST + item.attributes.imagen.data.attributes.url}
+                                        alt={item.attributes.titulo}
+                                        width={100}
+                                        height={100}
+                                    />
+                                    <div>
+                                        <h3 className={`${oswald.className}`}>{item.attributes.titulo}</h3>
+                                        <p>{item.attributes.descripcion}</p>
+                                        <span>Saber más</span>
+                                    </div>
+                                </article>
+                            </Link>
+                        </div>
+                    );
+                })}
             </div>
-        </section>
+        </section >
     )
 }
 

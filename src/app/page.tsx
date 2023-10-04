@@ -9,6 +9,7 @@ import Card from '../components/card/Card';
 import Footer from '../components/footer/Footer';
 import Avances from '../components/avances';
 import Apoyos from '../components/apoyos';
+import { HOST, TOKEN } from '@/utils';
 
 const openSans = Open_Sans({
   weight: '400',
@@ -20,7 +21,45 @@ const oswald = Oswald({
   subsets: ['latin'],
 })
 
-export default function Home() {
+const apoyosApi = async () => {
+  const apiUrl = HOST + '/api/apoyos?populate=*';
+  const options = {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${TOKEN}`,
+    },
+  };
+
+  try {
+    const response = await fetch(apiUrl, options);
+    const data = await response.json();
+    return data.data;
+  } catch (error) {
+    return [];
+  }
+};
+
+const avancesApi = async () => {
+  const apiUrl = HOST + '/api/avances?populate=*';
+  const options = {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${TOKEN}`,
+    },
+  };
+
+  try {
+    const response = await fetch(apiUrl, options);
+    const data = await response.json();
+    return data.data;
+  } catch (error) {
+    return [];
+  }
+};
+
+export default async function Home() {
+  const apoyos = await apoyosApi();
+  const avances = await avancesApi();
   return (
     <main className={`${styles.main} ${openSans.className}`}>
       <header>
@@ -45,8 +84,8 @@ export default function Home() {
         <Card />
       </section>
       <div className={openSans.className}>
-        <Avances />
-        <Apoyos />
+        <Avances data={avances} />
+        <Apoyos data={apoyos} />
         <Footer />
       </div>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-5LQPVHP6RD" />

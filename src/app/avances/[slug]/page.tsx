@@ -1,19 +1,7 @@
-export async function generateStaticParams({
-    params: { slug },
-}: {
-    params: { slug: string }
-}) {
-    const products: never[] = [];
-
-    return products;
-}
-
-export default function Page({
-    params,
-}: {
-    params: { slug: string }
-}) {
+export default function Page() {
     return (
-        <h1>Hola</h1>
+        <div className="container">
+            <h1>trabajando...</h1>
+        </div>
     )
 }
