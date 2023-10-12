@@ -24,7 +24,7 @@ const oswald = Oswald({
 })
 
 const apoyosApi = async () => {
-  const apiUrl = HOST + `/api/apoyos?populate=*`;
+  const apiUrl = HOST + `/api/apoyos?populate=*&filters[boricestamoscontigo_cl][$eq]=true`;
   const options = {
     method: 'GET',
     headers: {
